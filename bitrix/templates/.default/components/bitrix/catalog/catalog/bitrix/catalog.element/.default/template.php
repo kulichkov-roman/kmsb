@@ -13,13 +13,6 @@
 
 $this->setFrameMode(true);
 ?>
-<?
-if($USER->isAdmin())
-{
-    //echo "<pre>"; var_dump($arResult); echo "</pre>";
-    //echo "<pre>"; var_dump($arParams); echo "</pre>";
-}
-?>
 <?$this->SetViewTarget("showCatElemHeader");?>
     <h1>
         <?if($arResult["PROPERTIES"]["NAIMENOVANIE_DLYA_SAYTA_POLNOE"]["VALUE"] <> ""){?>
@@ -146,17 +139,21 @@ if($USER->isAdmin())
             </div>
         <?}?>
         <div class="b-card-section b-card-section_type_bin">
-			<?/*if($arResult["CATALOG_PRICE_2"] <> ""){?>
-				<div class="b-card-price"><?=getPrintPrice($arResult["CATALOG_PRICE_2"])?> с НДС</div>
-				<div class="b-card-rate">1 $ = <span class="b-card-rate__value"><?=$arResult["CURRENCYRATES"]["RATES"]?></span> (от <?=date("d.m.y")?>)</div>
-            <?}*/?>
 			<?itc\CUncachedArea::show('add_in_basket');?>
         </div>
     </div>
 </div>
 <div class="b-card__content">
     <div class="b-card-section">
-        <?if($arResult["DETAIL_TEXT"] <> '' && ($arResult["DETAIL_TEXT"] != '<p>#TABLE_PROP#</p>' || $arResult["DETAIL_TEXT"] != '#TABLE_PROP#')){
+        <?
+        $arResult["DETAIL_TEXT"] = str_replace(array("\r\n", "\r", "\n"), '', $arResult["DETAIL_TEXT"]);
+        
+        if($arResult["DETAIL_TEXT"] <> '' && (
+                $arResult["DETAIL_TEXT"] != '<p>#TABLE_PROP#</p>' ||
+                $arResult["DETAIL_TEXT"] != '#TABLE_PROP#'
+            )
+        )
+        {
             $arDetailText = explode("<p>#TABLE_PROP#</p>", $arResult["DETAIL_TEXT"]);
 
             if(sizeof($arDetailText) >= 1){

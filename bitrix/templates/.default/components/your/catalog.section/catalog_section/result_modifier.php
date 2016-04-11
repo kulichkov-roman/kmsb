@@ -412,7 +412,7 @@ if (!empty($arResult['ITEMS']))
 			$arElementIDs[] = $id;
 		}
 	}
-	
+
 	if(sizeof($arElementIDs) > 0)
 	{
 		$arSort = array("SORT"=>"ASC");
@@ -425,22 +425,22 @@ if (!empty($arResult['ITEMS']))
             "IBLOCK_ID" => CATALOG_IBLOCK_ID_KS,
             "ID" => $arElementIDs
         );
-		
+
 		$arElement = array();
-		
+
 		$rsElements = CIBlockElement::GetList(
-			$arSort, 
-			$arFilter, 
-			false, 
-			false, 
+			$arSort,
+			$arFilter,
+			false,
+			false,
 			$arSelect
 		);
-	
+
 		while($arItem = $rsElements->GetNext())
 		{
 			$arElement[$arItem["ID"]] = $arItem;
 		}
-		
+
 		$arSort = array(
             "ID" => "ASC"
         );
@@ -449,13 +449,13 @@ if (!empty($arResult['ITEMS']))
             "PRODUCT_ID",
             "CAN_BUY"
         );
-		
+
 		foreach($arResult["ITEMS"] as $id=>$arItem)
 		{
 			$arResult["ITEMS"][$id]["PROPERTIES"]["ARTICLE"]["VALUE"] = $arElement[$id]["PROPERTY_ARTICLE_VALUE"];
-			
+
 			$arResult["arOptionsSec"][$id] = $arItem;
-			
+
 			$rsBasket = CSaleBasket::GetList(
 				$arSort,
 				array(
@@ -468,9 +468,9 @@ if (!empty($arResult['ITEMS']))
 				false,
 				$arSelect
 			);
-			
+
 			$arBasket = $rsBasket->GetNext();
-			
+
 			if($arBasket)
 				$arResult["arOptionsSec"][$id]['inBacketButtom'] = 1;
 			else
@@ -538,7 +538,7 @@ if (!empty($arResult['ITEMS']))
 	$arResult["SHOW_SYMBOLS"]["AVAILABLE"] = "N";
 	$arResult["SHOW_SYMBOLS"]["NEW"] = "N";
 	$arResult["SHOW_SYMBOLS"]["ACTION"] = "N";
-	
+
 	foreach($arResult["ITEMS"] as $id=>$arItem)
 	{
 		if($arResult["SHOW_SYMBOLS"]["SERVICE"] == "N")
@@ -597,13 +597,13 @@ if($arParseUrl[2] == "manufacturers")
         "CODE" => $_REQUEST["BRAND_CODE"]
     );
     $rsElements = CIBlockElement::GetList(
-        $arSort, 
-        $arFilter, 
-        false, 
-        false, 
+        $arSort,
+        $arFilter,
+        false,
+        false,
         $arSelect
     );
-    
+
     while ($arItem = $rsElements->GetNext()) {
         $arElement = $arItem;
     }
@@ -619,7 +619,7 @@ $APPLICATION->AddChainItem($arResult['NAME'], "");
 $arSort = array("ID"=>"DESC");
 $arFilter = array("IBLOCK_ID" => CATALOG_IBLOCK_ID_KS, "ID" => $arResult["ID"]);
 $arSelect = array("ID", "NAME", "UF_SIMPLE_TABLE");
-            
+
 $rsSection = CIBlockSection::GetList(
     $arSort,
     $arFilter,
