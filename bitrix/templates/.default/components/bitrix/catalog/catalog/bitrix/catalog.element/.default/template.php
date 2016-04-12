@@ -72,7 +72,6 @@ $this->setFrameMode(true);
 						} else {
                             $extension = end(explode('.', $arResult["DETAIL_PICTURE"]["SRC"]));
                             $photoDetail = itc\Resizer::get($arResult["DETAIL_PICTURE"]["ID"], 'width', 1024, null, $extension);
-                            //$photoPrePreview = CTPic::resizeImage($arResult["DETAIL_PICTURE"]["ID"], 'cropml', 299, 232);
                             $photoPrePreview = itc\Resizer::get($arResult["DETAIL_PICTURE"]["ID"], 'auto', 300, 300, $extension);
                             $photoPreview = itc\Resizer::get($arResult["DETAIL_PICTURE"]["ID"], 'height', null, 76, $extension);
                             $showDetailPicture = true;
@@ -193,10 +192,33 @@ $this->setFrameMode(true);
 							<?if(is_array($arOption["DETAIL_PICTURE"])){?>
 								<span class="option__img">
 									<?
-									$extension = end(explode('.', $arOption["DETAIL_PICTURE"]["SRC"]));
-									$photoPreview = itc\Resizer::get($arOption["DETAIL_PICTURE"]["ID"], 'crop', 100, 100, $extension);
+                                    if (!is_array($arItem["DETAIL_PICTURE"])) {
+                                        $arPhoto = CFile::ResizeImageGet(
+                                            NO_PHOTO_PL_94_94_ID,
+                                            array(
+                                                'width'=>100,
+                                                'height'=>100
+                                            ),
+                                            BX_RESIZE_IMAGE_PROPORTIONAL,
+                                            true
+                                        );
+                                        $photo = $arPhoto['src'];
+                                    }
+                                    else
+                                    {
+                                        $arPhoto = CFile::ResizeImageGet(
+                                            $arItem["DETAIL_PICTURE"]["ID"],
+                                            array(
+                                                'width'=>100,
+                                                'height'=>100
+                                            ),
+                                            BX_RESIZE_IMAGE_PROPORTIONAL,
+                                            true
+                                        );
+                                        $photo = $arPhoto['src'];
+                                    }
 									?>
-									<img src="<?=$photoPreview?>" alt="<?=$arOption["DETAIL_PICTURE"]["DESCRIPTION"]?>"/>
+									<img src="<?=$photo?>" alt="<?=$arOption["DETAIL_PICTURE"]["DESCRIPTION"]?>"/>
 								</span>
 							<?}?>
 						</a>

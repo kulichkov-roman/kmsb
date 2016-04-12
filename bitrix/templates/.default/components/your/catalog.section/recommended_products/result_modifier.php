@@ -72,12 +72,29 @@ foreach ($arResult['ITEMS'] as &$arItem)
     // добавить перерезанные картинки
     if(is_array($arItem["DETAIL_PICTURE"]))
     {
-        $extension = end(explode('.', $arItem["DETAIL_PICTURE"]["SRC"]));
-        $arItem["DETAIL_PICTURE"]["SRC"] = itc\Resizer::get($arItem["DETAIL_PICTURE"]["ID"], 'crop', 100, 100, $extension);
+        $arPhoto = CFile::ResizeImageGet(
+            $arItem["DETAIL_PICTURE"]["ID"],
+            array(
+                'width' => 100,
+                'height' => 100
+            ),
+            BX_RESIZE_IMAGE_PROPORTIONAL,
+            true
+        );
+        $arItem["DETAIL_PICTURE"]["SRC"] = $arPhoto['src'];
     }
     else
     {
-        $arItem["DETAIL_PICTURE"]["SRC"] = itc\Resizer::get(NO_PHOTO_PL_94_94_ID, 'crop', 100, 100, NO_PHOTO_EXTENSION);
+        $arPhoto = CFile::ResizeImageGet(
+            NO_PHOTO_PL_94_94_ID,
+            array(
+                'width' => 100,
+                'height' => 100
+            ),
+            BX_RESIZE_IMAGE_PROPORTIONAL,
+            true
+        );
+        $arItem["DETAIL_PICTURE"]["SRC"] = $arPhoto['src'];
     }
 
     // проставить активность текущего элемента
@@ -91,5 +108,4 @@ foreach ($arResult['ITEMS'] as &$arItem)
     }
 }
 unset($arItem);
-
 ?>

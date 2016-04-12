@@ -5,11 +5,6 @@
 /** @global CDatabase $DB */
 
 $this->setFrameMode(true);
-
-if($USER->isAdmin())
-{
-    //echo "<pre>"; var_dump($arResult); echo "</pre>";
-}
 ?>
 <?if (!empty($arResult['ITEMS'])){?>
 	<div class="b-lineup">
