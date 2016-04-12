@@ -105,9 +105,7 @@ if($USER->isAdmin())
 										true
 									);
 									$photo = $arPhoto['src'];
-
-									//$photo = itc\Resizer::get(NO_PHOTO_PL_94_94_ID, 'auto', 94, 94, NO_PHOTO_EXTENSION);
-								} 
+								}
                                 else
                                 {
 	                                $arPhoto = CFile::ResizeImageGet(
@@ -120,13 +118,6 @@ if($USER->isAdmin())
 		                                true
 	                                );
 	                                $photo = $arPhoto['src'];
-
-	                                if($USER->isAdmin())
-	                                {
-		                                //echo "<pre>"; var_dump($photo); echo "</pre>";
-	                                }
-	                                //$extension = end(explode('.', $arItem["DETAIL_PICTURE"]["SRC"]));
-									//$photo = itc\Resizer::get($arItem["DETAIL_PICTURE"]["ID"], 'auto', 94, 94, $extension);
 								}
                                 if(!$arResult["SHOW_SIMPLE_TABLE"])
                                 {
