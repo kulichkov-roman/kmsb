@@ -192,7 +192,7 @@ $this->setFrameMode(true);
 							<?if(is_array($arOption["DETAIL_PICTURE"])){?>
 								<span class="option__img">
 									<?
-                                    if (!is_array($arItem["DETAIL_PICTURE"])) {
+                                    if (!is_array($arOption["DETAIL_PICTURE"])) {
                                         $arPhoto = CFile::ResizeImageGet(
                                             NO_PHOTO_PL_94_94_ID,
                                             array(
@@ -207,7 +207,7 @@ $this->setFrameMode(true);
                                     else
                                     {
                                         $arPhoto = CFile::ResizeImageGet(
-                                            $arItem["DETAIL_PICTURE"]["ID"],
+                                            $arOption["DETAIL_PICTURE"]["ID"],
                                             array(
                                                 'width'=>100,
                                                 'height'=>100
