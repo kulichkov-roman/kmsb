@@ -508,7 +508,6 @@ foreach($arOptionXmlIds as $optionXmlId){
 
 if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['confirmOrder']) && !empty($arResult['ITEMS'])) {
 	// add order
-	
 	foreach($_POST['PROPS'] as $id => $value) {
 		$arResult['POST']['PROPS'][$id] = htmlspecialchars($value);
 		$arResult['PROPS'][$id]['VALUE'] = $arResult['POST']['PROPS'][$id];
@@ -638,11 +637,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['confirmOrder']) && !emp
 			case 1:
 				// коммерческое предложение
 				break;
-				
 			case 2:
 				// счет на оплату
 				break;
-				
 			default:
 		}
 		
@@ -685,9 +682,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['confirmOrder']) && !emp
 		foreach($arResult['ITEMS'] as $id => $arItem) {
 			if(SHOW_PRICE === 'Y')
 			{
-				if($option['PROPERTY_CML2_ARTICLE'] <> "")
+				if($arItem['PROPERTY_CML2_ARTICLE'] <> "")
 				{
-					$article = '(арт. '. $option['PROPERTY_CML2_ARTICLE'] .')';
+					$article = '(арт. '. $arItem['PROPERTY_CML2_ARTICLE'] .')';
 				}
 
 				// $pNum - нумерация списка
@@ -710,11 +707,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['confirmOrder']) && !emp
 			}
 			else
 			{
-				if($option['PROPERTY_CML2_ARTICLE'] <> "")
+				if($arItem['PROPERTY_CML2_ARTICLE'] <> "")
 				{
-					$article = '(арт. '. $option['PROPERTY_CML2_ARTICLE'] .')';
+					$article = '(арт. '. $arItem['PROPERTY_CML2_ARTICLE'] .')';
 				}
-
 				// $pNum - нумерация списка
 				$productsTable .= '
 					<tr>
@@ -736,19 +732,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['confirmOrder']) && !emp
 					{
 						continue;
 					}
-					//if($first){
-					//	if(SHOW_PRICE === 'Y')
-					//	{
-					//		$productsTable .= '<tr><td colspan="4">Опции</td></tr>';
-					//		$productsTable .= '<tr><td colspan="4"><table>';
-					//	}
-					//	else
-					//	{
-					//		$productsTable .= '<tr><td colspan="2">Опции</td></tr>';
-					//		$productsTable .= '<tr><td colspan="2"><table>';
-					//	}
-					//	$first = false;
-					//}
 					if(SHOW_PRICE === 'Y')
 					{
 						if($option['PROPERTY_CML2_ARTICLE'] <> "")
@@ -777,7 +760,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['confirmOrder']) && !emp
 					else
 					{
 						// $opNum - нумерация списка
-
 						if($option['PROPERTY_CML2_ARTICLE'] <> "")
 						{
 							$article = '(арт. '. $option['PROPERTY_CML2_ARTICLE'] .')';
@@ -813,9 +795,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['confirmOrder']) && !emp
 			{
 				$colspan = 2;
 			}
-
-			file_put_contents($_SERVER["DOCUMENT_ROOT"]."/eventsend_log.txt", var_export($opNum, true), FILE_APPEND | LOCK_EX);
-			file_put_contents($_SERVER["DOCUMENT_ROOT"]."/eventsend_log.txt", var_export(sizeof($arItem['OPTIONS']), true), FILE_APPEND | LOCK_EX);
 
 			if($opNum > 0 && $opNum < sizeof($arItem['OPTIONS']))
 			{
@@ -882,14 +861,4 @@ if(empty($arResult['PROPS'][$arParams['SEND_ME_PROP_ID']]['VALUE'])) {
 $arResult["OPTION_QUANTITY"] = $arOptionQuantites;
 
 $this->IncludeComponentTemplate();
-
-//if($_SERVER['REMOTE_ADDR'] == '94.180.119.132') {
-//if($_SERVER['REMOTE_ADDR'] == '93.91.162.246') {
-/*if($_SERVER['REMOTE_ADDR'] == '93.91.162.246') {
-	echo '<pre>';
-	print_r($arParams);
-	print_r($arResult);
-	print_r($productsTable);
-	echo '</pre>';
-}*/
 ?>
