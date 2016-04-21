@@ -1,12 +1,5 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
 
-<?
-if($USER->isAdmin())
-{
-	//echo "<pre>"; var_dump($arResult); echo "</pre>";
-}
-?>
-
 <?$this->SetViewTarget("showCatSectionDescriptionTop");?>
     <?if($arResult["DESCRIPTION"] <> ""){?>
         <p>
