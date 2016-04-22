@@ -6,16 +6,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED!==true) die();
 
 CModule::IncludeModule("sale");
 
-//-->
 // Комплектующие
-
-if($USER->isAdmin())
-{
-    //echo "<pre>"; var_dump($arResult["DISPLAY_PROPERTIES"]); echo "</pre>";
-}
-
-//$arXmlIDs[] = $arResult["PROPERTIES"]["KOMPLEKTUYUSHCHIE"]["VALUE"];
-
 if(is_array($arResult["PROPERTIES"]["KOMPLEKTUYUSHCHIE"]["VALUE"]))
 {
     foreach($arResult["PROPERTIES"]["KOMPLEKTUYUSHCHIE"]["VALUE"] as $xmlID)
@@ -69,20 +60,12 @@ if(is_array($arResult["PROPERTIES"]["KOMPLEKTUYUSHCHIE"]["VALUE"]))
 		}
 	
 		$arResult["PROPERTIES"]["KOMPLEKTUYUSHCHIE"]["OPTIONS"] = $arElement;
-		
-		//echo "<pre>"; var_dump($arResult["PROPERTIES"]["KOMPLEKTUYUSHCHIE"]["OPTIONS"]); echo "</pre>";
-		
+
 		unset($arItem, $arFile, $arElement);
 	}
 }
 
-//echo sizeof($arElement);
-//echo "<pre>"; var_dump($arElement); echo "</pre>";//die();
-//<--
-
-//-->
 // Есть товар в корзине/нет товара в корзине
-
 $arSort = array("ID"=>"ASC");
 $arSelect = array("ID", "PRODUCT_ID", "CAN_BUY");
 $arFilter = array(
@@ -181,10 +164,6 @@ foreach($arPropCode as &$arProp)
         {
             $arProp["VALUE"] = $arRow["UF_NAME"];
         }
-        if($USER->isAdmin())
-        {
-            //echo "<pre>"; var_dump($arProp["VALUE"]); echo "</pre>";
-        }
     }
 }
 unset($arProp);
@@ -231,17 +210,14 @@ if($arResult['PROPERTIES']['NEW']['VALUE'])
 
 	if ($result == 1)
 	{
-		//echo $dateCur . " > " . $dateComp;
 		$arResult["PROPERTIES"]["NEW"]["VALUE_FLAG"] = 'N';
 	}
 	elseif($result == -1)
 	{
-		//echo $dateCur . " < " . $dateComp;
 		$arResult["PROPERTIES"]["NEW"]["VALUE_FLAG"] = 'Y';
 	}
 	elseif ($result == 0)
 	{
-		//echo $dateCur . " = " . $dateComp;
 		$arResult["PROPERTIES"]["NEW"]["VALUE_FLAG"] = 'Y';
 	}
 }
