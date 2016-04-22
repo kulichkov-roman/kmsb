@@ -294,7 +294,7 @@ $rsProperties = CSaleOrderProps::GetList(
 
 $arUserPropsIds = array();
 while ($arProperties = $rsProperties->GetNext()) {
-	//$arProperties['VALUE'] = $arResult['POST']['PROPS'][$arProperties['ID']];
+
 	$arResult['PROPS'][$arProperties['ID']] = $arProperties;
 	if($arProperties['USER_PROPS'] == 'Y') {
 		$arUserPropsIds[] = $arProperties['ID'];
@@ -336,7 +336,7 @@ while($arItem = $rsBasketItems->Fetch()) {
 
 	$mainProductId = $arMainProducts[$arItem["ID"]];
 
-	//это опция
+	// это опция
 	if($mainProductId){
 		$arOptionQuantites[$arItem['PRODUCT_ID'] . '_' . $mainProductId] = $arItem["QUANTITY"];		
 	}
@@ -374,7 +374,7 @@ if(!empty($productIds)) {
 		$arResult['ITEMS'][$arProduct['ID']]['NAIMENOVANIE_DLYA_SAYTA_KRATKOE'] = $arProduct['PROPERTY_NAIMENOVANIE_DLYA_SAYTA_KRATKOE_VALUE'];
 
 		$arResult['ITEMS'][$arProduct['ID']]['PROPERTY_CML2_ARTICLE'] = $arProduct['PROPERTY_CML2_ARTICLE_VALUE'];
-		//$arResult['PRODUCTS'][$arProduct['ID']] = $arProduct;
+
 		$arResult['XML'][$arProduct['XML_ID']] = $arProduct['ID'];
 		$xmlIds = array_merge($xmlIds, $arProduct['PROPERTY_KOMPLEKTUYUSHCHIE_VALUE']);
 
@@ -417,9 +417,28 @@ if(!empty($productIds)) {
 
 $productIdsForPrice = array();
 if(!empty($xmlIds)) {
-	$rsProducts = CIBlockElement::GetList(array('ID' => 'ASC'), array('IBLOCK_ID' => CATALOG_IBLOCK_ID_KS, 'XML_ID' => $xmlIds), false, false, array('ID', 'NAME', 'XML_ID', 'DETAIL_PAGE_URL', 'DETAIL_PICTURE', 'PROPERTY_NAIMENOVANIE_DLYA_SAYTA_POLNOE', 'PROPERTY_NAIMENOVANIE_DLYA_SAYTA_KRATKOE', 'PROPERTY_CML2_ARTICLE'));
+	$rsProducts = CIBlockElement::GetList(
+		array(
+			'property_NAIMENOVANIE_DLYA_SAYTA_POLNOE' => 'ASC'
+		),
+		array(
+			'IBLOCK_ID' => CATALOG_IBLOCK_ID_KS,
+		    'XML_ID' => $xmlIds
+		),
+		false,
+		false,
+		array(
+			'ID',
+			'NAME',
+			'XML_ID',
+			'DETAIL_PAGE_URL',
+			'DETAIL_PICTURE',
+			'PROPERTY_NAIMENOVANIE_DLYA_SAYTA_POLNOE',
+			'PROPERTY_NAIMENOVANIE_DLYA_SAYTA_KRATKOE',
+			'PROPERTY_CML2_ARTICLE'
+		)
+	);
 	while($arProduct = $rsProducts->GetNext()) {
-		//$arResult['PRODUCTS'][$arProduct['ID']] = $arProduct;
 		$arResult['ITEMS'][$arProduct['ID']]['NAME'] = $arProduct['NAME'];
 		$arResult['ITEMS'][$arProduct['ID']]['XML_ID'] = $arProduct['XML_ID'];
 		$arResult['ITEMS'][$arProduct['ID']]['DETAIL_PAGE_URL'] = $arProduct['DETAIL_PAGE_URL'];
@@ -493,14 +512,31 @@ if(!empty($productIdsForPrice)) {
 	}
 }
 
-$arOptionXmlIds = array();
-foreach($arResult['ITEMS'] as $id => $item) {
-	foreach($item['OPTIONS'] as $optionKey => $optionXmlId) {
-		$arResult['ITEMS'][$id]['OPTIONS'][$optionKey] = $arResult['ITEMS'][$arResult['XML'][$optionXmlId]];
-		$arOptionXmlIds[] = $optionXmlId;
-		// unset($arResult['ITEMS'][$arResult['XML'][$optionXmlId]]);
+$arOptionsUnSorted = array();
+foreach($arResult['ITEMS'] as $id => $arItems) {
+	foreach($arItems['OPTIONS'] as $optionKey => $optionXmlId) {
+		$arOptionsUnSorted[$id][$optionKey] = $arResult['ITEMS'][$arResult['XML'][$optionXmlId]];
 	}
 }
+
+$arXmlIDs = array();
+$arFieldSort = array();
+foreach($arOptionsUnSorted as $id => $arItems) {
+	foreach($arItems as $arItem) {
+		$arFieldSort[$arItem['XML_ID']] = $arItem['NAIMENOVANIE_DLYA_SAYTA_POLNOE'];
+	}
+	array_multisort($arFieldSort, SORT_ASC, SORT_STRING);
+	$arXmlIDs[$id] = array_keys($arFieldSort);
+}
+
+foreach($arResult['ITEMS'] as $id => &$arItems) {
+	$arItems['OPTIONS'] = $arXmlIDs[$id];
+	foreach($arItems['OPTIONS'] as $optionKey => $optionXmlId) {
+		$arResult['ITEMS'][$id]['OPTIONS'][$optionKey] = $arResult['ITEMS'][$arResult['XML'][$optionXmlId]];
+		$arOptionXmlIds[] = $optionXmlId;
+	}
+}
+unset($arItems);
 
 foreach($arOptionXmlIds as $optionXmlId){
 	unset($arResult['ITEMS'][$arResult['XML'][$optionXmlId]]);
