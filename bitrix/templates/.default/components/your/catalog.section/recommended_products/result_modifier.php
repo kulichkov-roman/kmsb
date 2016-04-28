@@ -78,7 +78,7 @@ foreach ($arResult['ITEMS'] as &$arItem)
                 'width' => 100,
                 'height' => 100
             ),
-            BX_RESIZE_IMAGE_PROPORTIONAL,
+            BX_RESIZE_IMAGE_EXACT,
             true
         );
         $arItem["DETAIL_PICTURE"]["SRC"] = $arPhoto['src'];
@@ -91,7 +91,7 @@ foreach ($arResult['ITEMS'] as &$arItem)
                 'width' => 100,
                 'height' => 100
             ),
-            BX_RESIZE_IMAGE_PROPORTIONAL,
+            BX_RESIZE_IMAGE_EXACT,
             true
         );
         $arItem["DETAIL_PICTURE"]["SRC"] = $arPhoto['src'];
