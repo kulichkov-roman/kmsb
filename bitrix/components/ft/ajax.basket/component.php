@@ -718,6 +718,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['confirmOrder']) && !emp
 		foreach($arResult['ITEMS'] as $id => $arItem) {
 			if(SHOW_PRICE === 'Y')
 			{
+				$article = '';
 				if($arItem['PROPERTY_CML2_ARTICLE'] <> "")
 				{
 					$article = '(арт. '. $arItem['PROPERTY_CML2_ARTICLE'] .')';
@@ -743,6 +744,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['confirmOrder']) && !emp
 			}
 			else
 			{
+				$article = '';
 				if($arItem['PROPERTY_CML2_ARTICLE'] <> "")
 				{
 					$article = '(арт. '. $arItem['PROPERTY_CML2_ARTICLE'] .')';
