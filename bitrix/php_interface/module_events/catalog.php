@@ -688,6 +688,7 @@ function createProductBalances()
         "NAME",
         "DETAIL_PICTURE",
         "PROPERTY_NAIMENOVANIE_DLYA_SAYTA_POLNOE",
+        "XML_ID"
     );
     $arFilter = array(
         "IBLOCK_ID" => CATALOG_IBLOCK_ID_KS,
@@ -781,6 +782,7 @@ function createProductBalances()
             "NAME"           => $arItem["PROPERTY_NAIMENOVANIE_DLYA_SAYTA_POLNOE_VALUE"],
             "ACTIVE"         => "Y",
             "DETAIL_PICTURE" => $fl->MakeFileArray($arItem["DETAIL_PICTURE"]["SRC"]),
+            "XML_ID"         => $arItem['XML_ID']
         );
 
         if(!($productId = $el->Add($arLoadProductArray)))
