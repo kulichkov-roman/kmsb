@@ -11,7 +11,13 @@ $APPLICATION->SetTitle("Сервис-центр");
 		"PATH" => "/include/site_templates/service_text.php",
 		"EDIT_TEMPLATE" => ""
 	)
-);?><?$APPLICATION->IncludeComponent(
+);?>
+<?
+$GLOBALS['arrFilter'] = array(
+	"PROPERTY_SHOW_IN_PAGE_SERVICE_VALUE" => "Y"
+);
+?>
+<?$APPLICATION->IncludeComponent(
 	"bitrix:news.list", 
 	"service_brands", 
 	array(
@@ -22,7 +28,8 @@ $APPLICATION->SetTitle("Сервис-центр");
 		"SORT_ORDER1" => "",
 		"SORT_BY2" => "",
 		"SORT_ORDER2" => "",
-		"FILTER_NAME" => "",
+		"USE_FILTER" => "Y",
+		"FILTER_NAME" => "arrFilter",
 		"FIELD_CODE" => array(
 			0 => "",
 			1 => "",
