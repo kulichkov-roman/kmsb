@@ -1,0 +1,24 @@
+/* Общие правки */
+
+.main-menu__item:nth-child(3n+1) {
+    width: 22%;
+}
+
+.main-content .goods__list_offers .goods__item {
+    width: 44%;
+}
+
+.b-card-section_size_12 + .b-card-section_size_12 {
+    padding-left: 5%;
+}
+
+.b-offers .offer__item {
+    width: 46%;
+}
+
+.ajax-loader img{
+    width:20px;
+    height:20px;
+    vertical-align:middle;
+    display:none;
+}
