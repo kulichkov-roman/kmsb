@@ -13,8 +13,6 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true) die();
 /** @var CBitrixComponent $component */
 $this->setFrameMode(false);
 
-echo "<pre>"; var_dump($arResult); echo "</pre>";
-
 $ElementIdFields = array();
 
 $FieldClasses = array(
@@ -40,11 +38,7 @@ if (!empty($arResult["PROPERTY_LIST"])) foreach ($arResult["PROPERTY_LIST"] as $
     unset($Field);
   }
 }
-
-#            __($arResult);
-//PROPERTY[1002][0][VALUE]
 ?>
-
 
 <div id="feedbackForm" class="b-popup b-popup-form b-popup-form_feedback">
     <div class="popup__header">Обратная связь</div>
@@ -66,6 +60,7 @@ if (!empty($arResult["PROPERTY_LIST"])) foreach ($arResult["PROPERTY_LIST"] as $
     <form name="iblock_add" action="<?=POST_FORM_ACTION_URI?>" class="form validate request-form feedback__form" method="post" enctype="multipart/form-data">
     <input type="hidden" class="js__name-field" value="" />
     <input type="hidden" name="PROPERTY[NAME][0]" class="js__title-field" value="" />
+    <input type="hidden" name="PROPERTY[XML_ID][0]" class="js__title-field" value="<?=rand('1000000', '10000000')?>"/>
     <?=bitrix_sessid_post()?>
 	  <div style="display: none;">
           <input type="text" value="" size="25" name="NAME_USER_FALSE">
@@ -86,10 +81,6 @@ if (!empty($arResult["PROPERTY_LIST"])) foreach ($arResult["PROPERTY_LIST"] as $
                       <?case 'N': ?>
                       <?case 'S': ?>
                             <?
-							if($USER->isAdmin())
-							{
-								//echo "<pre>"; var_dump($Property); echo "</pre>";
-							}
 							if($Property['CODE'] == 'Comment')
 							{
 								?>
@@ -138,11 +129,6 @@ if (!empty($arResult["PROPERTY_LIST"])) foreach ($arResult["PROPERTY_LIST"] as $
 	                          );?>
                             <?break;?>
                           <?case 'HTML':?>
-				             <?
-				                    /**
-				                     * Не работает, поле не отправляется
-				                     */
-				             ?>
                             <textarea
                                 name="PROPERTY[<?=$propertyID?>][0]"
                                 class="field<?=(!empty($Property['IS_REQUIRED']) ? ' required' : '')?><?=(!empty($FieldClasses[$propertyID]) ? ' '.$FieldClasses[$propertyID] : '')?> comment-field"
@@ -189,7 +175,6 @@ if (!empty($arResult["PROPERTY_LIST"])) foreach ($arResult["PROPERTY_LIST"] as $
   </script>
 <?} elseif($showSuccessForm) {?>
 	<div id="feedbackSuccessForm" class="b-popup b-popup-form b-popup-form_feedback">
-		<?/*<div class="popup__header">Обратная связь</div>*/?>
 		<div style="font-size: 19px;"><?=$arResult["MESSAGE"]?></div>
 	</div>
 	<div style="display: none; visibility: hidden;">

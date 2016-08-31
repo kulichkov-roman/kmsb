@@ -105,30 +105,32 @@ h3 {
 }
 .wrapper-wrap {
     background: #fff;
-
-    /*filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f3f3f3', endColorstr='#ffffff');
-    background: -webkit-gradient(linear, left top, left bottom, from(#f3f3f3), to(#ffffff));
-    background: -moz-linear-gradient(top,  #f3f3f3,  #ffffff);
-    background: -o-linear-gradient(top,  #f3f3f3,  #ffffff);
-    background: -ms-linear-gradient(top,  #f3f3f3,  #ffffff);*/
     border-bottom: 4px solid #4572ac;
     -webkit-box-shadow: 0 0 32px rgba(203,203,203,.5);
     -moz-box-shadow: 0 0 32px rgba(203,203,203,.5);
     box-shadow: 0 0 32px rgba(203,203,203,.5);
-    margin: 45px 3% 0 3%;
+    margin: 165px 3% 0 3%;
+    padding-top: 20px;
 }
 
 .header {
-    position: relative;
+    position: fixed;
+    top:45px;
+    left:0;
     width: 100%;
+    z-index: 1;
 }
 .header-top {
+    background: #fff;
     font-size: 11px;
     left: 0;
     padding: 14px 0 0 0;
     position: absolute;
     right: 0;
     top: -45px;
+    max-width: 1203.22px;
+    min-width: 1000px;
+    margin: 0 auto;
 }
 .header-main {
     overflow: hidden;
@@ -137,8 +139,12 @@ h3 {
 .header-main-wrap {
     -webkit-box-shadow: 0 1px 13px rgba(0,0,0,.2);
     -moz-box-shadow: 0 1px 13px rgba(0,0,0,.2);
+    background: #fff;
     box-shadow: 0 1px 13px rgba(0,0,0,.2);
     padding: 31px 0 2px 0;
+    max-width: 1203.22px;
+    min-width: 1000px;
+    margin: 0 auto;
 }
 
 .logo {

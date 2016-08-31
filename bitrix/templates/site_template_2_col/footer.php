@@ -92,7 +92,9 @@ $curDir = $APPLICATION->GetCurDir();
 			4 => "999",
 			5 => "1001",
 			6 => "1000",
-            7 => "1002"),
+            7 => "1002",
+            8 => "XML_ID"
+		),
 		"PROPERTY_CODES_REQUIRED" => array(
 			0 => "NAME",
 			1 => "995",
