@@ -232,8 +232,10 @@ a.cart-status__value:before {
 .site-search {
     margin: 10px 0 0 0;
     min-width: 235px;
-    position: relative;
     width: 21.9%;
+}
+.site-search form {
+    position: relative;
 }
 .site-search__label {
     color: #838383;
