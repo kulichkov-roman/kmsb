@@ -2851,7 +2851,7 @@ div.bin-contacts__header {
     -moz-box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
     overflow: visible;
-    z-index: 105;
+    z-index: 999;
 }
 .ui-dialog.compare-details .ui-dialog-titlebar {
     padding: 0;
