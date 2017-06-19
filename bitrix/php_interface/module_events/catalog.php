@@ -1,14 +1,14 @@
 <?
 //AddEventHandler("catalog", "OnSuccessCatalogImport1C", "setPropertyNames");
 AddEventHandler("catalog", "OnSuccessCatalogImport1C", "setBrandProperty", 100);
-AddEventHandler("catalog", "OnSuccessCatalogImport1C", "resetUserFieldsShowLeftMenu", 200);
-AddEventHandler("catalog", "OnSuccessCatalogImport1C", "setUserFieldsShowLeftMenu", 300);
-AddEventHandler("catalog", "OnSuccessCatalogImport1C", "setUserFieldsQuantityLeftMenu", 400);
-AddEventHandler("catalog", "OnSuccessCatalogImport1C", "deleteProductBalances", 500);
-AddEventHandler("catalog", "OnSuccessCatalogImport1C", "createProductBalances", 600);
-AddEventHandler("catalog", "OnSuccessCatalogImport1C", "clearCountElements", 700);
-AddEventHandler("catalog", "OnSuccessCatalogImport1C", "setCountElements", 800);
-AddEventHandler("catalog", "OnSuccessCatalogImport1C", "setCountElementsBalance", 900);
+//AddEventHandler("catalog", "OnSuccessCatalogImport1C", "resetUserFieldsShowLeftMenu", 200);
+//AddEventHandler("catalog", "OnSuccessCatalogImport1C", "setUserFieldsShowLeftMenu", 300);
+//AddEventHandler("catalog", "OnSuccessCatalogImport1C", "setUserFieldsQuantityLeftMenu", 400);
+//AddEventHandler("catalog", "OnSuccessCatalogImport1C", "deleteProductBalances", 500);
+//AddEventHandler("catalog", "OnSuccessCatalogImport1C", "createProductBalances", 600);
+//AddEventHandler("catalog", "OnSuccessCatalogImport1C", "clearCountElements", 700);
+//AddEventHandler("catalog", "OnSuccessCatalogImport1C", "setCountElements", 800);
+//AddEventHandler("catalog", "OnSuccessCatalogImport1C", "setCountElementsBalance", 900);
 
 function setPropertyNames()
 {
