@@ -1,22 +1,7 @@
 <?if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
 
-<?
-//echo "<pre>"; var_dump($arResult); echo "</pre>";
-
-//pre($arResult); die('1');
-?>
 <?if (!empty($arResult)){?>
-	<div class="catalog-menu">
-        <ul class="catalog-type__list">
-            <li class="catalog-type__item">
-                <a href="/catalog/" class="catalog-type__link" title="Каталог">По всем товарам</a>
-            </li>
-            <li class="catalog-type__item">
-                <span class="catalog-type__link catalog-type__link_state_active" title="По производителям">По производителям</span>
-            </li>
-        </ul>
-    </div>
-    <div class="manufacturer-menu">
+	<div class="manufacturer-menu">
         <ul class="manufacturer-menu__list">
             <?foreach($arResult as $arItem){?>
                 <?if(!$arItem["SELECTED"]){?>
