@@ -567,7 +567,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['confirmOrder']) && !emp
 	$arFilePropIds = array_unique($arFilePropIds);
 
 	foreach($arFilePropIds as $filePropId){
-		$arResult['PROPS'][$filePropId]['VALUE'] = CFile::SaveFile($arResult['PROPS'][$filePropId]['VALUE']);
+		//$arResult['PROPS'][$filePropId]['VALUE'] = CFile::SaveFile($arResult['PROPS'][$filePropId]['VALUE']);
 	}
 
 	if($arResult['POST']['FIELDS']['REGISTER'] == 'Y' && empty($arParams['USER_ID'])) {
