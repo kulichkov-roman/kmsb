@@ -412,24 +412,24 @@
 		                        //    );
 	                            //}
 								$APPLICATION->IncludeComponent(
-									"bitrix:menu",
-									$templates,
-									array(
-										"ROOT_MENU_TYPE" => "left_cat",
-										"MENU_CACHE_TYPE" => "A",
-										"MENU_CACHE_TIME" => "3600",
-										"MENU_CACHE_USE_GROUPS" => "Y",
-										"MENU_CACHE_GET_VARS" => array(
-										),
-										"MAX_LEVEL" => "4",
-										"CHILD_MENU_TYPE" => "left_cat",
-										"USE_EXT" => "Y",
-										"DELAY" => "N",
-										"ALLOW_MULTI_SELECT" => "N",
-										"COMPONENT_TEMPLATE" => "catalog_left_menu"
-									),
-									false
-								);
+	"bitrix:menu", 
+	"catalog_left_menu", 
+	array(
+		"ROOT_MENU_TYPE" => "left_cat",
+		"MENU_CACHE_TYPE" => "A",
+		"MENU_CACHE_TIME" => "3600",
+		"MENU_CACHE_USE_GROUPS" => "Y",
+		"MENU_CACHE_GET_VARS" => array(
+		),
+		"MAX_LEVEL" => "4",
+		"CHILD_MENU_TYPE" => "left_cat",
+		"USE_EXT" => "Y",
+		"DELAY" => "N",
+		"ALLOW_MULTI_SELECT" => "N",
+		"COMPONENT_TEMPLATE" => "catalog_left_menu"
+	),
+	false
+);
 							} else {
 								//$APPLICATION->IncludeComponent("bitrix:menu", "catalog_left_menu", array(
                                 //    "ROOT_MENU_TYPE" => "left_cat",

@@ -21,8 +21,8 @@ else
 $aMenuLinksExt = $APPLICATION->IncludeComponent("your:menu.sections","",Array(
 		"IS_SEF" => "Y",
 		"SEF_BASE_URL" => $sefBaseUrl,
-		"SECTION_PAGE_URL" => "#SECTION_CODE#/",
-		"DETAIL_PAGE_URL" => "#SECTION_CODE#/#CODE#/",
+	"SECTION_PAGE_URL" => "#SECTION_CODE#/",
+	"DETAIL_PAGE_URL" => "#SECTION_CODE#/#CODE#/",
 		"IBLOCK_TYPE" => DYNAMIC_CONTENT_TYPE_KS,
 		"IBLOCK_ID" => CATALOG_IBLOCK_ID_KS,
 		"DEPTH_LEVEL" => "5",

@@ -1,0 +1,21 @@
+<p>
+ <span style="font-size: 12pt; font-family: Verdana;">Предлагаем сотрудничество посредническим организациям, занимающимся поставками лабораторного оборудования. </span><br>
+	<span style="font-family: Verdana;"> </span><span style="font-family: Verdana;"> </span><span style="font-family: Verdana;"> </span><span style="font-size: 12pt; font-family: Verdana;"> </span><span style="font-size: 12pt; font-family: Verdana;">
+	Наша компания имеет склад и осуществляет продажу по заводским или представительским&nbsp;ценам следующего оборудования: </span><span style="font-size: 12pt; font-family: Verdana;"> </span><span style="font-family: Verdana;"> </span><span style="font-family: Verdana;"> </span><span style="font-family: Verdana;"> </span>
+</p>
+<span style="font-family: Verdana;"> </span><span style="font-family: Verdana;"> </span><span style="font-family: Verdana;"> </span><span style="font-size: 12pt; font-family: Verdana;"> </span><span style="font-size: 12pt; font-family: Verdana;"> </span><span style="font-size: 12pt; font-family: Verdana;"> </span><span style="font-family: Verdana;"> </span><span style="font-family: Verdana;"> </span><span style="font-family: Verdana;"> </span>
+<ul>
+	<li><span style="font-size: 12pt; font-family: Verdana;"> </span><b><span style="font-size: 12pt; font-family: Verdana;">Daihan Scientific</span></b><span style="font-size: 12pt; font-family: Verdana;"> (общелабораторное оборудование);</span></li>
+	<li><b><span style="font-size: 12pt; font-family: Verdana;">Mettler Toledo</span></b><span style="font-size: 12pt; font-family: Verdana;"> (аналитические и измерительные приборы, весовая техника);</span></li>
+	<li><b><span style="font-size: 12pt; font-family: Verdana;">Ohaus</span></b><span style="font-size: 12pt; font-family: Verdana;"> (электрохимические приборы и весовая техника). </span></li>
+</ul>
+<span style="font-family: Verdana;"> </span><span style="font-family: Verdana;"> </span><span style="font-family: Verdana;"> </span><span style="font-size: 12pt; font-family: Verdana;"> </span><span style="font-size: 12pt; font-family: Verdana;"> </span><span style="font-size: 12pt; font-family: Verdana;"> </span><span style="font-family: Verdana;"> </span><span style="font-family: Verdana;"> </span><span style="font-family: Verdana;"> </span>
+<p>
+	<span style="font-family: Verdana;"> </span><span style="font-family: Verdana;"> </span><span style="font-family: Verdana;"> </span><span style="font-size: 12pt; font-family: Verdana;"> </span><span style="font-size: 12pt; font-family: Verdana;">
+	Торгующим организациям предоставляются стартовые скидки от 5 до 20% от официальных прайс-листов в зависимости от объема продаж и марки оборудования.&nbsp; </span><span style="font-size: 12pt; font-family: Verdana;"> </span><span style="font-family: Verdana;"> </span><span style="font-family: Verdana;"> </span><span style="font-family: Verdana;"> </span>
+</p>
+<span style="font-family: Verdana;"> </span><span style="font-family: Verdana;"> </span><span style="font-family: Verdana;"> </span><span style="font-size: 12pt; font-family: Verdana;"> </span><span style="font-size: 12pt; font-family: Verdana;"> </span><span style="font-size: 12pt; font-family: Verdana;"> </span><span style="font-family: Verdana;"> </span><span style="font-family: Verdana;"> </span><span style="font-family: Verdana;"> </span>
+<p>
+	<span style="font-family: Verdana;"> </span><span style="font-family: Verdana;"> </span><span style="font-family: Verdana;"> </span><span style="font-size: 12pt; font-family: Verdana;"> </span><span style="font-size: 12pt; font-family: Verdana;">
+	Помимо обширной складской программы своим партнерам мы также готовы предложить поддержку нашего </span><a target="_blank" href="http://www.kom-sib.ru/service/"><span style="font-size: 12pt; font-family: Verdana;">сервис-центра</span></a><span style="font-size: 13pt;"><span style="font-size: 12pt; font-family: Verdana;">&nbsp;по сопровождению поставляемого оборудования и пуско-наладочным работам, а также предоставить выставочные образцы в Ваш демонстрационный зал или для работы на выставках.</span> </span>
+</p>

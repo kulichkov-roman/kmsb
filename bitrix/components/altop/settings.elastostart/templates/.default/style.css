@@ -1,0 +1,359 @@
+.settings-panel{
+	width:270px;
+	position:fixed;
+	right:-270px;
+	top:82px;	
+	padding-top:17px;
+	padding-bottom:17px;
+	-moz-border-radius:4px 0px 0px 4px;
+	-webkit-border-radius:4px 0px 0px 4px;
+	-khtml-border-radius:4px 0px 0px 4px;
+	border-radius:4px 0px 0px 4px;	
+	background-color:#3d4b52;	
+	z-index:3;	
+}
+
+.settings-panel.active{
+	right:0px;
+	-webkit-box-shadow:0px 0px 15px rgba(61, 75, 82, 0.5);
+	-moz-box-shadow:0px 0px 15px rgba(61, 75, 82, 0.5);
+	box-shadow:0px 0px 15px rgba(61, 75, 82, 0.5);
+}
+
+.settings-panel .panel-title{
+	padding:16px 24px;
+	font-size:18px;
+	color:#fff;
+	line-height:16px;	
+	background-color:#253036;
+}
+
+.settings-panel .switch{
+	width:48px;
+	height:48px;
+	position:absolute;
+	left:-48px;
+	top:17px;
+	text-align:center;	
+	-moz-border-radius:4px 0px 0px 4px;
+	-webkit-border-radius:4px 0px 0px 4px;
+	-khtml-border-radius:4px 0px 0px 4px;
+	border-radius:4px 0px 0px 4px;
+	-webkit-box-shadow:0px 0px 15px rgba(61, 75, 82, 0.5);
+	-moz-box-shadow:0px 0px 15px rgba(61, 75, 82, 0.5);
+	box-shadow:0px 0px 15px rgba(61, 75, 82, 0.5);
+	background-color:#253036;
+	cursor:pointer;
+	-webkit-transition:all 0.15s ease 0s;
+	-moz-transition:all 0.15s ease 0s;
+	-o-transition:all 0.15s ease 0s;
+	transition:all 0.15s ease 0s;
+}
+
+.settings-panel .switch:hover{
+	background-color:#33a9d9;
+}
+
+.settings-panel.active .switch{
+	-webkit-box-shadow:none;
+	-moz-box-shadow:none;
+	box-shadow:none;
+}
+
+.settings-panel .switch i{
+	font-size:28px;
+	line-height:48px;
+}
+
+.settings-panel .panel-block{	
+	width:100%;
+	display:table;
+	border-bottom:1px solid #55686e;
+}
+
+.settings-panel .block-title{
+	width:100%;
+	display:table;
+	padding:15px 24px;
+	cursor:pointer;
+}
+
+.settings-panel .block-title span,
+.settings-panel .block-title i{
+	display:table-cell;
+	vertical-align:middle;
+	line-height:16px;
+	-webkit-transition:all 0.15s ease 0s;
+	-moz-transition:all 0.15s ease 0s;
+	-o-transition:all 0.15s ease 0s;
+	transition:all 0.15s ease 0s;
+}
+
+.settings-panel .block-title span{
+	font-size:16px;
+	color:#d0e0e3;	
+}
+
+.settings-panel .block-title i{
+	width:16px;
+	font-size:20px;
+	color:#697f84;
+}
+
+.settings-panel .block-title:hover span,
+.settings-panel .block-title:hover i{
+	color:#fff;
+}
+
+.settings-panel .block-options{	
+	display:none;	
+	padding:0px 24px 12px;	
+}
+
+.settings-panel .selectbox{
+	width:100%;
+	float:left;
+	padding-right:18px;
+}
+
+.settings-panel .block-option{
+	margin-bottom:6px;
+}
+
+.settings-panel .selectbox .block-option{
+	float:left;
+	margin-right:6px;	
+}
+
+.settings-panel .block-option input[type=radio],
+.settings-panel .block-option input[type=checkbox]{
+	display:none;
+}
+
+.settings-panel .block-option label{
+	margin-bottom:0px;
+	font-weight:300;
+	cursor:pointer;
+}
+
+.settings-panel .selectbox label{		
+	display:block;	
+	padding:4px 12px;	
+	font-size:14px;
+	color:#d0e0e3;	
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px;
+	-khtml-border-radius:4px;
+	border-radius:4px;
+	background-color:#55686e;
+	-webkit-transition:all 0.15s ease 0s;
+	-moz-transition:all 0.15s ease 0s;
+	-o-transition:all 0.15s ease 0s;
+	transition:all 0.15s ease 0s;
+}
+
+.settings-panel .selectbox label:hover{
+	color:#fff;
+	background-color:#8ea6ab;
+}
+
+.settings-panel .selectbox input:checked + label{
+	color:#fff;
+	background-color:#33a9d9;
+}
+
+.settings-panel .colors label{
+	width:32px;
+	height:32px;
+	padding:0px;
+	border:2px solid transparent;
+	-moz-border-radius:2px;
+	-webkit-border-radius:2px;
+	-khtml-border-radius:2px;
+	border-radius:2px;
+}
+
+.settings-panel .colors label:hover,
+.settings-panel .colors input:checked + label{
+	border-color:#fff;
+}
+
+.settings-panel .colors label i{
+	display:none;
+}
+
+.settings-panel .colors input:checked + label i{
+	display:block;
+	font-size:13px;
+	text-align:center;
+	line-height:28px;
+}
+
+.settings-panel .color-scheme-custom{	
+	float:left;
+	margin-top:6px;	
+}
+
+.settings-panel .color-scheme-custom input[type=text]{
+	width:81px;
+	height:32px;
+	float:left;	
+	padding:0px;	
+	font-size:14px;
+	color:#3d4b52;
+	text-align:center;	
+	border:1px solid #d0e0e3;
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px;
+	-khtml-border-radius:4px;
+	border-radius:4px;
+}
+
+.settings-panel .color-scheme-custom button{
+	width:97px;
+	height:32px;
+	float:left;
+	margin-left:6px;
+	padding:0px;	
+	font-size:14px;
+	line-height:30px;	
+}
+
+.settings-panel .color-scheme-custom button i{		
+	padding-right:8px;
+	font-size:13px;
+}
+
+.settings-panel .multiselectbox label{	
+	display:table;	
+}
+
+.settings-panel .multiselectbox .check-cont,
+.settings-panel .multiselectbox .check-title{
+	display:table-cell;
+	vertical-align:middle;
+}
+
+.settings-panel .multiselectbox .check-cont{
+	width:18px;
+}
+
+.settings-panel .multiselectbox .check{
+	width:18px;
+	height:18px;
+	display:block;	
+	text-align:center;	
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px;
+	-khtml-border-radius:4px;
+	border-radius:4px;
+	background-color:#697f84;
+	-webkit-transition:all 0.15s ease 0s;
+	-moz-transition:all 0.15s ease 0s;
+	-o-transition:all 0.15s ease 0s;
+	transition:all 0.15s ease 0s;
+}
+
+.settings-panel .multiselectbox label:hover .check,
+.settings-panel .multiselectbox input:checked + label:hover .check{	
+	background-color:#33a9d9;
+}
+
+.settings-panel .multiselectbox input:checked + label .check{	
+	background-color:#99cc33;
+}
+
+.settings-panel .multiselectbox .check i{
+	font-size:11px;
+	color:#fff;
+	line-height:18px;
+	display:none;
+}
+
+.settings-panel .multiselectbox input:checked + label .check i{
+	display:block;	
+}
+
+.settings-panel .multiselectbox .check-title{	
+	padding-left:9px;
+	font-size:14px;
+	color:#d0e0e3;
+	line-height:18px;
+	-webkit-transition:all 0.15s ease 0s;
+	-moz-transition:all 0.15s ease 0s;
+	-o-transition:all 0.15s ease 0s;
+	transition:all 0.15s ease 0s;
+}
+
+.settings-panel .multiselectbox label:hover .check-title{
+	color:#fff;
+}
+
+.settings-panel .reset{
+	padding:18px 24px 0px;	
+	border:none;
+}
+
+.settings-panel .reset button{
+	width:100%;
+	height:32px;	
+	padding:0px;
+	font-size:14px;
+	line-height:30px;
+}
+
+.settings-panel .reset button i{	
+	font-size:16px;
+	padding-right:9px;	
+}
+
+/***PALETTE***/
+.palette_cont{
+	position:fixed !important;
+	left:auto !important;
+	right:12px;
+	border:none;
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px;
+	-khtml-border-radius:4px;
+	border-radius:4px;
+    -webkit-box-shadow:0px 0px 15px rgba(61, 75, 82, 0.5);
+	-moz-box-shadow:0px 0px 15px rgba(61, 75, 82, 0.5);
+	box-shadow:0px 0px 15px rgba(61, 75, 82, 0.5);
+	background-color:#55686e;
+}
+
+.palette_cont .sp-picker-container{
+	width:222px;	
+	padding:12px 12px 302px;	
+}
+
+.palette_cont .sp-cf{
+	width:100%;
+	float:left;
+}
+
+.palette_cont .sp-top{
+	margin-bottom:12px;
+}
+
+.palette_cont .sp-cancel,
+.palette_cont .sp-choose{
+	height:32px;
+	float:right;
+	padding:0px 12px;
+	font-family:"Roboto", sans-serif;
+	font-size:14px;
+	font-weight:300;	
+}
+
+.palette_cont .sp-cancel{
+	margin-right:6px;
+}
+
+/***<768px***/
+@media screen and (max-width:767px){
+	.settings-panel{
+		display:none;		
+	}
+}

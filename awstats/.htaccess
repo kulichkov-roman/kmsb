@@ -1,0 +1,8 @@
+AuthName 'Restricted Area'
+AuthType Basic
+AuthUserFile /home/c/ce98064/.authfile
+require valid-user
+
+Options +ExecCGI
+DirectoryIndex awstats.pl
+

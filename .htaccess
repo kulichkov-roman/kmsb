@@ -36,6 +36,8 @@ ErrorDocument 404 /404.php
 	ExpiresByType image/jpeg "access plus 3 day"
 	ExpiresByType image/gif "access plus 3 day"
 </IfModule>
-
-AddDefaultCharset utf-8
+php_value mbstring.func_overload 2
+php_value mbstring.internal_encoding UTF-8
 php_value default_charset utf-8
+php_value pcre.recursion_limit 14000
+AddType 'text/html; charset=utf-8' .html .htm .shtml

@@ -1,0 +1,1 @@
+<p>&copy; <a href="http://kom-sib.ru">Сибирь-комплект</a>, 2007&ndash;<?$x=2014; $now=getdate(); if($now["year"]>$x){echo $now["year"];} else {echo $x;}?></p>

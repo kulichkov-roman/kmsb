@@ -1,0 +1,22 @@
+2019-02-13 06:26:02 - Host:  - UNCAUGHT_EXCEPTION - [Error] 
+Call to undefined function mysqli_init() (0)
+/home/c/ce98064/kom-sib.ru/public_html/bitrix/modules/main/lib/db/mysqliconnection.php:48
+#0: Bitrix\Main\DB\MysqliConnection->connectInternal()
+	/home/c/ce98064/kom-sib.ru/public_html/bitrix/modules/main/lib/db/mysqliconnection.php:122
+#1: Bitrix\Main\DB\MysqliConnection->queryInternal(string, NULL, NULL)
+	/home/c/ce98064/kom-sib.ru/public_html/bitrix/modules/main/lib/db/connection.php:330
+#2: Bitrix\Main\DB\Connection->query(string, NULL, integer, integer)
+	/home/c/ce98064/kom-sib.ru/public_html/bitrix/modules/main/lib/db/connection.php:358
+#3: Bitrix\Main\DB\Connection->queryScalar(string)
+	/home/c/ce98064/kom-sib.ru/public_html/bitrix/modules/security/lib/session.php:114
+#4: Bitrix\Security\SessionTable::lock(string, integer)
+	/home/c/ce98064/kom-sib.ru/public_html/bitrix/modules/security/classes/general/session_db.php:52
+#5: CSecuritySessionDB::read(string)
+	
+#6: session_start()
+	/home/c/ce98064/kom-sib.ru/public_html/bitrix/modules/main/include.php:281
+#7: require_once(string)
+	/home/c/ce98064/kom-sib.ru/public_html/bitrix/modules/main/include/prolog_before.php:14
+#8: require(string)
+	/home/c/ce98064/kom-sib.ru/public_html/bitrix/modules/main/tools/cron_events.php:11
+----------

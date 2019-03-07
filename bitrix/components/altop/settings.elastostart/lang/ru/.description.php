@@ -1,0 +1,5 @@
+<?
+$MESS["SETTINGS_COMPONENT_NAME"] = "Настройки сайта";
+$MESS["SETTINGS_COMPONENT_DESCRIPTION"] = "Настройки сайта";
+$MESS["SETTINGS_COMPONENT_PATH_NAME"] = "ALTOP";
+?>
