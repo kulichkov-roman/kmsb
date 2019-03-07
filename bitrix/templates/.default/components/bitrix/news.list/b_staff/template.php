@@ -70,17 +70,19 @@ $this->setFrameMode(true);
 													</span>
 												</div>
 											<?}?>
-											<div class="staff-contacts__item">
+                                            <?php if ($email = $Item['PROPERTIES']['EMAIL']['VALUE']): ?>
+                                                <div class="staff-contacts__item">
 												<span class="staff-contacts__value">
-													<a	class="js__openFormInPopupFeedback mail-link"
-														href="#feedbackForm"
-														data-id="<?=$Item['ID'];?>"
-														data-name="<?=$Item['NAME'];?>"
-													>
+													<a class="js__openFormInPopupFeedback mail-link"
+                                                       href="#feedbackForm"
+                                                       data-id="<?= $Item['ID']; ?>"
+                                                       data-name="<?= $Item['NAME']; ?>"
+                                                    >
 														<span class="link-text">Написать сообщение</span>
 													</a>
 												</span>
-											</div>
+                                                </div>
+                                            <?php endif ?>
 										</div>
 									<?}?>
 								</div>
