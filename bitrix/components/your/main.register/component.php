@@ -75,6 +75,12 @@ $register_done = false;
 // register user
 if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_REQUEST["register_submit_button"]) && !$USER->IsAuthorized())
 {
+    $checkFields = array('NAME' => 'Ф.И.О.');
+    foreach ($checkFields as $fieldCode => $name) {
+        if (preg_match('#[a-zA-Z]#', $_REQUEST['REGISTER'][$fieldCode])) {
+            $arResult["ERRORS"][] = "Поле '$name' не должно содержать английских символов.";
+        }
+    }
 	if(COption::GetOptionString('main', 'use_encrypted_auth', 'N') == 'Y')
 	{
 		//possible encrypted user password
