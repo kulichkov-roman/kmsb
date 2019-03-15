@@ -1,5 +1,20 @@
 <? 
 //-->
+AddEventHandler('main', 'OnBeforeUserAdd', function (&$arFields) {
+
+    global $APPLICATION;
+
+    $checkFields = array('NAME' => 'Ф.И.О.');
+    foreach ($checkFields as $fieldCode => $name) {
+        if (preg_match('#[a-zA-Z]#', $arFields[$fieldCode])) {
+            $APPLICATION->ThrowException("Поле '$name' не должно содержать английских символов.");
+            return false;
+        }
+    }
+
+    return true;
+}, 1);
+
 AddEventHandler("main", "OnBeforeUserUpdate", Array("KMSMainClass", "OnBeforeUserUpdateHandler"));
 AddEventHandler("main", "OnBeforeUserAdd", Array("KMSMainClass", "OnBeforeUserAddHandler"));
 AddEventHandler("main", "OnBeforeEventSend", Array("KMSMainClass", "OnBeforeEventSendHandler"));
