@@ -8,7 +8,7 @@ if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true) die();
 * @var CBitrixComponent $this
 * @var CMain $APPLICATION
 * @var CUser $USER
-* @var CBitrixMenuComponent $this
+* @var CBitrixMenuComponentOld $this
 */
 
 global $CACHE_MANAGER;

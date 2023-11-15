@@ -1,6 +1,6 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
 
-class CBitrixMenuComponent extends CBitrixComponent
+class CBitrixMenuComponentOld extends CBitrixComponent
 {
 	public function getCacheID($additionalCacheID = false)
 	{

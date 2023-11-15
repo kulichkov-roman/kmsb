@@ -412,13 +412,8 @@
 		                        //    );
 	                            //}
 
-                                if($GLOBALS["USER"]->IsAdmin()){
-                                    $txt = 'your:menu';
-                                }
-                                $txt = 'bitrix:menu';
-
 								$APPLICATION->IncludeComponent(
-    $txt,
+	"your:menu",
 	"catalog_left_menu", 
 	array(
 		"ROOT_MENU_TYPE" => "left_cat",
