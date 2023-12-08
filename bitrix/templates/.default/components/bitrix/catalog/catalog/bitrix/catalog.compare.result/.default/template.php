@@ -59,7 +59,13 @@
                                 <?
                                 if (!is_array($arElement["DETAIL_PICTURE"])) 
                                 {
-                                    $photo = itc\Resizer::get(NO_PHOTO_ID, 'height', null, 150, NO_PHOTO_EXTENSION);
+                                    if(!$arElement["DETAIL_PICTURE"]){
+                                        $photo = itc\Resizer::get(NO_PHOTO_ID, 'height', null, 150, NO_PHOTO_EXTENSION);
+                                    }
+                                    else {
+                                        $arPhoto = CFile::ResizeImageGet($arElement["DETAIL_PICTURE"], array('height'=>150), BX_RESIZE_IMAGE_PROPORTIONAL, true);
+                                        $photo = $arPhoto['src'];
+                                    }
                                 }
                                 else
                                 {

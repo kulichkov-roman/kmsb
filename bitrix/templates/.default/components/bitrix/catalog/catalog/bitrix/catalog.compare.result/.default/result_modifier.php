@@ -70,31 +70,31 @@ if(sizeof($arDetailPhotoIds) == 1)
     unset($arDetailPhotoIdsTmp);
 }
 
-$arSort = array("id"=>"desc");
+$arSort = array();
 $arFilter = array(
 	"ID" => $arDetailPhotoIds
 );
 
-$rsDetailPhoto = CFile::GetList(
-	$arSort, 
+/*$rsDetailPhoto = CFile::GetList(
+	$arSort,
 	$arFilter
 );
 
 while($arItem = $rsDetailPhoto->Fetch())
-{    
+{
     $arItem["SRC"] = getFileSrc($arItem);
     $arDetailPhoto[$arItem["ID"]] = $arItem;
 }
-unset($arItem);
+unset($arItem);*/
 
-foreach($arResult["ITEMS"] as &$arItem)
+/*foreach($arResult["ITEMS"] as &$arItem)
 {
     if($arItem["DETAIL_PICTURE"] !== false)
     {
-        $arItem["DETAIL_PICTURE"] = $arDetailPhoto[$arItem["DETAIL_PICTURE"]];
+        $arItem["DETAIL_PICTURE"] = CFile::GetPath($arItem["DETAIL_PICTURE"]);
     }
 }
-unset($arItem);
+unset($arItem);*/
 
 $count = sizeof($arResult["ITEMS"]);
 
